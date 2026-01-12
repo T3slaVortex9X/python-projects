@@ -1,8 +1,8 @@
-## This is a Mini Student Info Project
-## This is like a Model
-class Student:
+"""Hello this is a mini student info project"""
+import time
+class Student():
     def __init__(self):
-        print("---Wellcome to my Project---")
+        print("---Wellcome to Student Info Projects---")
 
         self.name = input("Enter your name: ")
 
@@ -11,37 +11,42 @@ class Student:
                 self.age = int(input("Enter your age: "))
                 break
             except ValueError:
-                print("Invalid age - please Enter a valid integer.")
-
+                print("Please, Enter a Valid Number.")
         while True:
             try:
-
-                self.height = float(input("Enter your height: "))
+                self.high = float(input("Enter your high: "))
                 break
             except ValueError:
-                    print("Please Enter a valid float or int")
-      ## Display and output logic
+                print("Please, Enter a Valid number")
     def show_info(self):
-        print("\n --- Final Reasult ---")
+        print("\n---Final Result---")
         print(f"Name: {self.name}")
         print(f"Age: {self.age}")
-        print(f"Height: {self.height}")
-## The Project Menue
+        print(f"High: {self.high}")
 def main():
+    p = Student()
+    while True:
+        print("\n---Result---")
+        print("1.Show Info")
+        print("2.Exit")
 
-        p = Student()  ## This is an object that contain the user info
-        while True:
-            print("-- Result --")
-            print("1. Show info")
-            print("2. Exit")
-            choice = input("Slect an option")
-            if choice not in ["1", "2"]:
-                print("Invalid option")
-                continue
-            if choice == "2":
-                print("Good bye")
-                break
-            if choice == "1":
-                p.show_info()
+        choice = int(input("Select an option: "))
+        if choice not in [1, 2]:
+            print("Invalid choice")
+            continue
+        elif choice == 2:
+            print("Good bye")
+            print("...")
+            time.sleep(2)
+            print(".....")
+            time.sleep(2)
+            print(".........")
+            time.sleep(3)
+            print(".............")
+            time.sleep(4)
+            print("....................")
+            break
+        elif choice == 1:
+            p.show_info()
 if __name__ == "__main__":
     main()
