@@ -4,14 +4,36 @@ Converter = {
     'c_to_f': lambda c: (c * 9/5) + 32,
     'f_to_c': lambda f: (f - 32) * 5/9
 }
+print("\n---Wellcome to Temperature Converter---")
+print("You can enter 'q' at anytime to quite")
 
-print("\n---Wellcome to my project---")
-print("1.Change c to f")
-print("2.Change f to c")
-choice = int(input("select an option: "))
-if choice not in [1, 2]:
-    print("Invalid choice")
-elif choice == 1:
-    print(f" {Converter['c_to_f'](25):.1f}f")
-elif choice == 2:
-    print(f" {Converter['f_to_c'](77):.1f}f")
+while True:
+    print("Lets goo")
+    print("1. Celsius to Farenheit")
+    print("2. Farenheit to Celsius")
+
+    choice = input("\n choose one of them (1, 2) or 'q' for quite: ")
+    if choice.lower() == "q":
+        print("good bye")
+        break
+    if choice not in ['1', '2']:
+        print("Invalid option")
+        continue
+    while True:
+        temp_input = input(f"\n Enter temperature (or 'b' for back): ")
+        if temp_input.lower() == 'b':
+            break
+        elif temp_input.lower() == 'q':
+            print("Good bye")
+            exit()
+
+        try:
+            temp = float(temp_input)
+            if choice == 1:
+                result = Converter['c_to_f'](temp)
+                print(f"{temp} = {result:.1f}")
+            else:
+                result = Converter['f_to_c'](temp)
+                print(f"{temp} = {result:.1f}")
+        except ValueError:
+                print("Plx Enter a Valid number")
