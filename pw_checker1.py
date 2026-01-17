@@ -38,5 +38,6 @@ while True:
 
     if is_weak_pw(pw):
         print("weak password")
+        print("Your password is so weak plx enter a valid one")
     else:
         print("strong password")
