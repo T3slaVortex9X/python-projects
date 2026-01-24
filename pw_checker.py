@@ -1,4 +1,7 @@
 from random import choice
+# this is just for fun -----------------------------------------
+#------------------------
+#------------------------------------------#-----
 
 
 def is_weak_pw(password):
@@ -37,6 +40,6 @@ while True:
     pw = input("Enter password: ")
 
     if is_weak_pw(pw):
-        print("weak password")
+        print("weak password your password is soo weak")
     else:
-        print("strong password")
+        print("strong password no need to chang again ok")
