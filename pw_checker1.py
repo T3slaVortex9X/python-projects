@@ -1,5 +1,8 @@
-from random import choice
+##-------------------------------
+##--------------------------------
 
+from random import choice
+##0000-------------------00000
 
 def is_weak_pw(password):
     score = 0
