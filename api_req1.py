@@ -1,8 +1,11 @@
 import requests
 def send_request():
-    params = {"market": "BTCUSDT", "limit": 10, "type": "1day"}
+    params = {"market": "BTCUSDT", "limit": 100, "type": "1day"}
     response = requests.get("https://api.coinex.com/v1/market/kline",params = params)
-    jsonrespon = response.json()
+    if response.status_code == 200:
+        data = response.json()
+        print(data["title"])
+    else:
+        print("Error", response.status_code)
 
-    print(jsonrespon)
 send_request()
